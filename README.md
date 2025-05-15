@@ -43,7 +43,7 @@ Java Swingを使ったシンプルなペイントアプリです。
 このプロジェクトはMIT Licenseのもとで公開されています。
 
 ## 📧 お問い合わせ
-- **Github: motomasMINO**
+- **GitHub: motomasMINO**
 
 - **Email: yu120615@gmail.com**
 
