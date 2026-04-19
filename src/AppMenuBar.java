@@ -1,5 +1,6 @@
 import javax.swing.*;
 
+// メニューバー用クラス
 public class AppMenuBar {
     private final FileManager fileManager;
 

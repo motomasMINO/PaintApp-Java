@@ -1,8 +1,6 @@
 import java.awt.*;
 
-/**
- * ColorPoint
- */
+// 色と座標を保持するクラス
 public class ColorPoint {
   private Color color;
   private int x, y;
@@ -27,6 +25,7 @@ public class ColorPoint {
     return y;
   }
 
+  // 線の太さを取得するメソッド
   public int getStrokeSize() {
     return strokeSize;
   }

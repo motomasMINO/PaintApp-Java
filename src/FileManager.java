@@ -1,10 +1,11 @@
-import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.*;
 
+// ファイル管理クラス
 public class FileManager {
     private File currentFile = null; // 上書き保存用ファイル
     private final Component parent;
@@ -19,9 +20,11 @@ public class FileManager {
     public void openFile() {
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("開く");
+        // PNGとJPG形式のフィルタを追加
         fileChooser.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("画像ファイル (PNG, JPG)", "png", "jpg", "jpeg"));
 
         int result = fileChooser.showOpenDialog(parent);
+        // ファイルが選択された場合
         if (result == JFileChooser.APPROVE_OPTION) {
             File file = fileChooser.getSelectedFile();
             try {
@@ -38,6 +41,7 @@ public class FileManager {
     public void saveAsFile() {
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("名前を付けて保存");
+        // PNG形式のフィルタを追加
         fileChooser.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("PNG 画像", "png"));
 
         int result = fileChooser.showSaveDialog(parent);
@@ -50,7 +54,7 @@ public class FileManager {
 
     // 上書き保存
     public void saveFile() {
-        if (currentFile != null) {
+        if (currentFile != null) { // すでに保存しているファイルがある場合は上書き保存
             saveImage(currentFile);
         } else {
             saveAsFile(); // まだ保存していなければ「名前を付けて保存」

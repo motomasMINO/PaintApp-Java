@@ -1,11 +1,9 @@
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.*;
 
-/**
- * PaintGui
- */
+// GUIウィンドウ作成クラス
 public class PaintGui extends JFrame {
   public PaintGui(){
     super("ペイントアプリ");
@@ -126,7 +124,7 @@ private void addGuiComponents() {
       public void actionPerformed(ActionEvent e) {
         if(eraserButton.isSelected()) {
           canvas.setEraserMode(true);
-        } else {
+        } else { // 通常描画モードに戻す
           canvas.setEraserMode(false);
         }
       }
